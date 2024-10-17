@@ -1,0 +1,41 @@
+﻿Liste d’url à bannir : Création d”une base rassemblant plusieurs sources reconnues :
+
+
+
+
+1. EasyList
+URL : https://easylist.to/
+Description : EasyList est l'une des listes les plus populaires pour le filtrage de publicités et de contenus malveillants. Vous pouvez l'utiliser pour bloquer des sites web de publicités, trackers, et plus encore.
+2. Shalla's Blacklist
+URL : https://www.shallalist.de/
+Description : Une liste de filtres de contenus web, notamment pour bloquer des sites de catégories spécifiques (adultes, jeux, phishing, etc.). Elle est régulièrement mise à jour.
+3. Malwaredomains
+URL : http://www.malwaredomains.com/
+Description : Cette blacklist contient des URL de domaines associés à des malwares. Elle peut être utilisée pour protéger votre réseau contre les sites malveillants.
+4. Spamhaus
+URL : https://www.spamhaus.org/
+Description : Spamhaus offre plusieurs services de blacklistage, notamment pour les emails et les domaines associés à des comportements nuisibles (spam, phishing, etc.). Ils ont des listes comme la DROP list pour les domaines suspects.
+5. PhishTank
+* URL : https://www.phishtank.com/
+* Description : Une source dédiée aux sites de phishing, maintenue par la communauté. Vous pouvez télécharger leur liste de sites suspects et l'intégrer à votre proxy pour empêcher l'accès à ces sites.
+6. Blocklist.de
+* URL : https://www.blocklist.de/en/index.html
+* Description : Fournit des listes noires de domaines et d'IP à des fins de filtrage. Idéale pour bloquer les IP suspectes et les sites potentiellement dangereux.
+7. URLhaus
+* URL : https://urlhaus.abuse.ch/
+* Description : Maintenue par le projet Abuse.ch, cette base de données contient des URL liées à des malwares. Ces informations peuvent être utilisées pour renforcer la sécurité du réseau.
+8. Adaway
+* URL : https://adaway.org/
+* Description : Une liste noire open-source principalement dédiée au blocage de publicités et de trackers. Elle est souvent utilisée pour le filtrage de contenus indésirables via des proxies ou des serveurs DNS.
+9. OpenDNS FamilyShield
+* URL : https://www.opendns.com/home-internet-security/
+* Description : OpenDNS propose un service de filtrage de contenu basé sur DNS. Vous pouvez choisir entre des options de sécurité (malwares, phishing) et des options familiales (bloquer les sites pour adultes).
+10. DNSBL (DNS-based Blackhole List)
+* URL : https://www.dnsbl.info/
+* Description : DNSBL est une liste d’adresses IP connues pour être associées à des activités malveillantes comme le spam. Vous pouvez l'utiliser pour filtrer les connexions à des sites compromettants.
+11. URLfilter DB
+* URL : https://www.urlfilterdb.com/
+* Description : Ce site fournit des listes de sites web classées par catégories et met à disposition des API pour intégrer ces données à votre proxy ou autre solution de filtrage.
+12 . GITHUB 
+* URL :: https://github.com/hagezi/dns-blocklists
+* Description :: projet avec 4,6K de STAR qui bloquent les URL malveillantes
