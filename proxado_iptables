@@ -1,7 +1,37 @@
 #!/bin/bash
 
+# Vérifier si /usr/sbin est déjà dans le PATH
+if [[ ":$PATH:" != *":/usr/sbin:"* ]]; then
+    echo "/usr/sbin n'est pas dans le PATH. Ajout en cours..."
+
+    # Ajouter /usr/sbin au PATH pour cette session
+    export PATH=$PATH:/usr/sbin
+
+    # Vérifier et ajouter au .bashrc de l'utilisateur si cela n'existe pas
+    if ! grep -q 'export PATH=$PATH:/usr/sbin' ~/.bashrc; then
+        echo "Ajout de /usr/sbin dans ~/.bashrc pour les sessions futures..."
+        echo 'export PATH=$PATH:/usr/sbin' >> ~/.bashrc
+    else
+        echo "/usr/sbin est déjà dans ~/.bashrc."
+    fi
+
+    # Vérifier et ajouter au /etc/profile (global) si cela n'existe pas
+    if [[ -w /etc/profile ]]; then
+        if ! grep -q 'export PATH=$PATH:/usr/sbin' /etc/profile; then
+            echo "Ajout de /usr/sbin dans /etc/profile pour tous les utilisateurs..."
+            sudo sh -c 'echo "export PATH=\$PATH:/usr/sbin" >> /etc/profile'
+        else
+            echo "/usr/sbin est déjà dans /etc/profile."
+        fi
+    else
+        echo "/etc/profile n'est pas accessible en écriture (nécessite des droits root)."
+    fi
+else
+    echo "/usr/sbin est déjà dans le PATH. Aucune modification nécessaire."
+fi
+
 # Fichier contenant les domaines à bloquer
-DOMAIN_FILE="/path/to/blocked_domains.txt"
+DOMAIN_FILE="/home/user/Téléchargements/blocked_domains.txt"
 
 # Fonction pour récupérer l'adresse IP d'un domaine via DNS
 resolve_ip() {
@@ -9,12 +39,12 @@ resolve_ip() {
     dig +short $domain | grep -E '^[0-9.]+$'
 }
 
-# Heure actuelle
-HOUR=$(date +"%H")
+# Heure actuelle au format HHMM (ex: 0930 pour 9h30)
+CURRENT_TIME=$(date +"HHMM")
 
-# Appliquer le blocage seulement de 20h à 5h
-if [[ $HOUR -ge 20 ]] || [[ $HOUR -lt 5 ]]; then
-    echo "Application du blocage pour les horaires 20h à 5h..."
+# Appliquer le blocage seulement de 20h00 à 09h30
+if [[ $CURRENT_TIME -ge 0941 ]] || [[ $CURRENT_TIME -lt 2000 ]]; then
+    echo "Application du blocage pour les horaires 20h00 à 09h30..."
     
     # Lire les domaines et appliquer les règles iptables
     while IFS= read -r domain; do
