@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Proxado
+Comment=Lancer le bloquage des DNS.
+Exec=/home/user/Téléchargements/proxado_iptables
+Icon=utilities-terminal
+Terminal=true
