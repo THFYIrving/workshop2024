@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Add Blocked Domains
+Comment=Ajouter des sites au fichier blocked_domain.txt
+Exec=/home/user/Téléchargements/add_blocked_domains.sh
+Icon=utilities-terminal
+Terminal=true
