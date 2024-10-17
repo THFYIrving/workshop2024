@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Modifier les heures de blocage
+Exec=/home/user/Téléchargements/modify_hours.sh
+Icon=utilities-terminal
+Terminal=true
+Type=Application
